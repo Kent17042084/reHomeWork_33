@@ -12,13 +12,15 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class HomeTask33_Main {
-
-    /*Открыть https://rozetka.com.ua/
+    /* ЛЕХА, ЕСЛИ ТЫ ЧИТАЕШЬ ЭТО ТО МОЯ ДЗ ЕЩЕ ТРЕБУЕТ ДОРАБОТКИ
+    Открыть https://rozetka.com.ua/
     Перейти в раздел «Компьютеры и ноутбуки»
     Перейти в раздел « Ноутбуки»
     Добавить первый товар в корзину
     Проверить что в корзину добавился один товар
-    Перейти в корзину и проверить, что добавился правильный товар*/
+    Перейти в корзину и проверить, что добавился правильный товар
+
+
     @BeforeMethod
     public void before(){
         Configuration.startMaximized = true;
@@ -36,8 +38,6 @@ public class HomeTask33_Main {
         SelenideElement laptopCategory = $(By.xpath("//li[@class='portal-grid__cell']//a[contains(text(), 'Ноутбуки')]"));
         laptopCategory.click();
 
-        SelenideElement productTitle = $(By.xpath("//span[@class='goods-tile__title']"));
-        productTitle.click();
 
         SelenideElement buyBtn = $(By.xpath("//button[@class='buy-button goods-tile__buy-button']"));
         buyBtn.click();
@@ -49,7 +49,18 @@ public class HomeTask33_Main {
         String cartProductTitleText = cartProductTitle.text();
 
         Assert.assertEquals(cartProductTitleText, cartProductTitleText);
-
     }
+*/
 
+    @BeforeMethod
+    public void before(){
+        Configuration.startMaximized = true;
+        open("https://rozetka.com.ua");
+    }
+    @Test
+    public void testSelenide(){
+        new MainPageLogic().clickOnCategoryJS()
+                .clickCategory(new CategoryPageElements().laptopCategory)
+                .chekingTitleQuantity(60);
+    }
     }
