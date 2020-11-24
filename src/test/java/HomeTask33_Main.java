@@ -60,7 +60,7 @@ public class HomeTask33_Main {
     @Test
     public void testSelenide(){
         new MainPageLogic().clickOnCategoryJS()
-                .clickCategory(new CategoryPageElements().laptopCategory)
-                .chekingTitleQuantity(60);
+                .clickCategory(new CategoryPageElements().laptopCategory);
+
     }
     }
