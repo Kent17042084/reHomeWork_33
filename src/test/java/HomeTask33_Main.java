@@ -33,6 +33,9 @@ public class HomeTask33_Main {
         laptopCategory.click();
 
 
+        SelenideElement productTitle = &(By.xpath("//span[@class'goods-tile__title']"));
+        String productTitleText = productTitle.text();
+
         SelenideElement buyBtn = $(By.xpath("//button[@class='buy-button goods-tile__buy-button']"));
         buyBtn.click();
 
