@@ -1,12 +1,11 @@
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class BuyGood {
 
-    SelenideElement productTitle = $(By.xpath("//span[@class'goods-tile__title']"));
+    SelenideElement productTitle = $(By.xpath("//span[@class='goods-tile__title']"));
 
     SelenideElement goodBuyButton = $(By.xpath("//button[@class='buy-button goods-tile__buy-button']"));
 
