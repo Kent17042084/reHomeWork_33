@@ -2,8 +2,7 @@ import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class HomeTask33_Main {
     /*
@@ -52,12 +51,15 @@ public class HomeTask33_Main {
     @BeforeMethod
     public void before() {
         Configuration.startMaximized = true;
+        Configuration.timeout = 5000;
+        //Configuration.holdBrowserOpen = true;
         open("https://rozetka.com.ua");
     }
     @Test
     public void testSelenide() {
-        new PcAndLaptopLogic().clickOnCategoryJS()
-                .clickCategory(new LaptopCategoryPageElement().laptopCategory);
+        new PcAndLaptopLogic().clickOnCategoryJS();
+        new LaptopCategoryPageLogic().clickCategory();
+        new BuyGoodLogic().clickCategory();
 
     }
 }
