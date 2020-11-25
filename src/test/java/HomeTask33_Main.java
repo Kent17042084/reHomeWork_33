@@ -1,18 +1,12 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class HomeTask33_Main {
-    /* ЛЕХА, ЕСЛИ ТЫ ЧИТАЕШЬ ЭТО ТО МОЯ ДЗ ЕЩЕ ТРЕБУЕТ ДОРАБОТКИ
+    /*
     Открыть https://rozetka.com.ua/
     Перейти в раздел «Компьютеры и ноутбуки»
     Перейти в раздел « Ноутбуки»
@@ -42,25 +36,25 @@ public class HomeTask33_Main {
         SelenideElement buyBtn = $(By.xpath("//button[@class='buy-button goods-tile__buy-button']"));
         buyBtn.click();
 
+       ..
         SelenideElement counter = $(By.xpath("//span[@class='header-actions__button-counter']"));
         counter.shouldHave(text("1")).click();
 
         SelenideElement cartProductTitle = $(By.xpath("//a[@class='cart-product__title']"));
         String cartProductTitleText = cartProductTitle.text();
 
-        Assert.assertEquals(cartProductTitleText, cartProductTitleText);
+        Assert.assertEquals(ProductTitleText, cartProductTitleText);
     }
 */
-
     @BeforeMethod
-    public void before(){
+    public void before() {
         Configuration.startMaximized = true;
         open("https://rozetka.com.ua");
     }
     @Test
-    public void testSelenide(){
-        new MainPageLogic().clickOnCategoryJS()
-                .clickCategory(new CategoryPageElements().laptopCategory);
+    public void testSelenide() {
+        new PcAndLaptopLogic().clickOnCategoryJS()
+                .clickCategory(new LaptopCategoryPageElement().laptopCategory);
 
     }
-    }
+}

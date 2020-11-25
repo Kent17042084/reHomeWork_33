@@ -3,6 +3,6 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPageElements {
+public class PcAndLaptopElements {
     SelenideElement laptopAndCompCategory = $(By.xpath("//a[@class='menu-categories__link']"));
 }
