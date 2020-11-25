@@ -60,6 +60,5 @@ public class HomeTask33_Main {
         new PcAndLaptopLogic().clickOnCategoryJS();
         new LaptopCategoryPageLogic().clickCategory();
         new BuyGoodLogic().clickCategory();
-
     }
 }
