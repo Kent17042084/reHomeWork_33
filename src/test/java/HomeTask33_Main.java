@@ -57,8 +57,6 @@ public class HomeTask33_Main {
     }
     @Test
     public void testSelenide() {
-        new PcAndLaptopLogic().clickOnCategoryJS();
-        new LaptopCategoryPageLogic().clickCategory();
-        new BuyGoodLogic().clickCategory();
+        new PcAndLaptopLogic().clickOnCategoryJS().clickCategory().goodLogic();
     }
 }
